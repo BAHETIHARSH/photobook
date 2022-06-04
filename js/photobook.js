@@ -16,9 +16,19 @@ let maxLocation = numOfPapers + 1;
 let frontIndex = 0
 let backIndex = papers.length
 function openBook() {
-    book.style.transform = "translateX(50%)";
-    prevBtn.style.transform = "translateX(-220px)";
-    nextBtn.style.transform = "translateX(180px)";
+    if (document.documentElement.clientWidth > 1000){
+        console.log("object2")
+        book.style.transform = "translateX(50%)";
+        prevBtn.style.transform = "translateX(-170px)";
+        nextBtn.style.transform = "translateX(170px)";
+    }
+    else{
+        console.log("object")
+        book.style.transform = "translateX(50%)";
+        prevBtn.style.transform = "translateX(-80px)";
+        nextBtn.style.transform = "translateX(80px)";
+    
+    }
 }
 
 function closeBook(isAtBeginning) {
