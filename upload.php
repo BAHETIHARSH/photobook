@@ -6,9 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-<form action="UP.PHP" enctype="multipart/form-data" method = "post">
+<form action="./UP.php" enctype="multipart/form-data" method = "post">
     <input type="file" name="up[]" multiple required/>
     <input type="submit" value="submit" name="submit"/>
+    <input type="submit" value="delete" name="submit"/>
 </form>
 
 

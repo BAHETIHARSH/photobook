@@ -12,14 +12,15 @@ include 'database.php';
 
 if(isset($_POST['submit'])){
     // delete previous files
+    if($_POST['submit']=='delete'){
+        $deleteQuery = "DELETE FROM `images` ";
+        mysqli_query($con,$deleteQuery);
     
-    $deleteQuery = "DELETE FROM `images` ";
-    mysqli_query($con,$deleteQuery);
-
-    // Deleting all the files inside the given folder
-    array_map('unlink', array_filter((array) array_merge(glob("assets/*"))));
-
-
+        // Deleting all the files inside the given folder
+        array_map('unlink', array_filter((array) array_merge(glob("assets/*"))));
+        
+    }
+   
 
     $extensions = array('jpeg','jpg','JPG','JPEG');
     foreach ($_FILES['up']['name'] as $key => $value) {
